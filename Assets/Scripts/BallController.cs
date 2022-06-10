@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
 
-
+    public GameObject particleSystem;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +23,7 @@ public class BallController : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Instantiate(particleSystem, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }
@@ -32,6 +33,7 @@ public class BallController : MonoBehaviour
         if (transform.position.y < -5)
         {
             Destroy(this.gameObject);
+            Lives.Instance.LoseLife();
         }
     }
 }

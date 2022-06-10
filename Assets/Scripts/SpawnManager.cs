@@ -21,8 +21,9 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnBall()
     {
-        float rand = Random.Range(-15f, 15f);
-        spawnLocation = new Vector3(0, 15, rand);
+        float rand = Random.Range(-13f, 13f);
+        float rand2 = Random.Range(-13f, 13f);
+        spawnLocation = new Vector3(rand, 15, rand2);
         GameObject clone = Instantiate(ball, spawnLocation, Quaternion.identity);
     }
 }
